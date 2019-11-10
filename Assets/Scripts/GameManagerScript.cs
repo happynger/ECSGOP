@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
+using Unity.Physics;
 using Unity.Rendering;
 using Unity.Transforms;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Material = UnityEngine.Material;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -38,6 +40,8 @@ public class GameManagerScript : MonoBehaviour
 		var particleArchetype = eManager.CreateArchetype(
 			typeof(Translation),
 			typeof(RenderMesh),
+			typeof(Rotation),
+			typeof(PhysicsCollider),
 			typeof(LocalToWorld),
 			typeof(MoveComponent),
 			typeof(Particle),
